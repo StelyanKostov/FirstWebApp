@@ -11,7 +11,7 @@ namespace FirstWebApp.Services
     {
         SmartphoneViewModel GetSmartphoneById(int id);
 
-        IEnumerable<SmartphoneViewModel> GetAll(int page, int itemsPerPage = 12);
+        IEnumerable<SmartphoneViewModel> GetSmartphonesForPages(int page, int itemsPerPage = 12);
 
         int GetCount();
 

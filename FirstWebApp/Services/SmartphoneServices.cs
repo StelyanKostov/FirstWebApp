@@ -25,7 +25,7 @@ namespace FirstWebApp.Services
             this._mapper = mapper;
             this.webHostEnvironment = webHostEnvironment;
         }
-        public IEnumerable<SmartphoneViewModel> All()
+        public IEnumerable<SmartphoneViewModel> GetAll()
         {
             var sp = db.Smartphones
              .Include(x => x.battery)
@@ -49,10 +49,10 @@ namespace FirstWebApp.Services
             return smartphone;
         }
 
-        public IEnumerable<SmartphoneViewModel> GetAll(int page, int itemsPerPage = 12)
+        public IEnumerable<SmartphoneViewModel> GetSmartphonesForPages(int page, int itemsPerPage = 12)
         {
 
-            var smartphone = this.All();
+            var smartphone = this.GetAll();
 
             //var smartphone = db.Smartphones.AsNoTracking().Select(x => new SmartphoneViewModel
             //{

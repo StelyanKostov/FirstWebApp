@@ -42,7 +42,7 @@ namespace FirstWebApp.Controllers
             {
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
-                listSmartphoneViewModels = smartphoneServices.GetAll(id, ItemsPerPage),
+                listSmartphoneViewModels = smartphoneServices.GetSmartphonesForPages(id, ItemsPerPage),
                 CountSmartphones = smartphoneServices.GetCount(),
 
             };
@@ -62,7 +62,7 @@ namespace FirstWebApp.Controllers
             {
                 ItemsPerPage = ItemsPerPage,
                 PageNumber = id,
-                listSmartphoneViewModels = smartphoneServices.GetAll(id, ItemsPerPage),
+                listSmartphoneViewModels = smartphoneServices.GetSmartphonesForPages(id, ItemsPerPage),
                 CountSmartphones = smartphoneServices.GetCount(),
                 WitchSearch = false,
                 ComparisonSmartphones = new ViewModels.ComparisonSmartViewModel.ListComparisonSmartphoneViewModel()
