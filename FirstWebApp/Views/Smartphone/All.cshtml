@@ -1,0 +1,36 @@
+﻿@model FirstWebApp.ViewModels.ListSmartphoneViewModel
+@{
+    this.ViewData["Title"] = "All Smartphone";
+}
+
+<h1>@this.ViewData["Title"] </h1>
+<h1> @this.Model.CountSmartphones</h1>
+
+<partial name="_SearchPatial" />
+<partial name="_CardComparisonPatial" model="Model.ComparisonSmartphones" />
+
+
+<div class="row">
+    @foreach (var rezult in this.Model.listSmartphoneViewModels)
+    {
+
+        <div class="media col-md-3 ">
+            <a asp-action="ById" asp-route-id="@rezult.Id">
+                <h5>@rezult.Name</h5>
+                @if (rezult.image != null)
+                {
+                    <img src="@rezult.image.Path" class="mr-3 img-responsive" width="100" alt="..." />
+
+                }
+
+                <div class="media-body">
+                    @*<h5 class="mt-0"> Info</h5>*@
+                </div>
+            </a>
+        </div>
+
+    }
+</div>
+<hr />
+<partial name="_PagingPartial" model="@Model" />
+<hr />

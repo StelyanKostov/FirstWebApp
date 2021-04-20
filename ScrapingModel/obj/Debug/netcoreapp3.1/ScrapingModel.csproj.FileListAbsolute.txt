@@ -1,0 +1,9 @@
+C:\Users\kosto\source\repos\FirstWebApp\ScrapingModel\bin\Debug\netcoreapp3.1\ScrapingModel.deps.json
+C:\Users\kosto\source\repos\FirstWebApp\ScrapingModel\bin\Debug\netcoreapp3.1\ScrapingModel.dll
+C:\Users\kosto\source\repos\FirstWebApp\ScrapingModel\bin\Debug\netcoreapp3.1\ScrapingModel.pdb
+C:\Users\kosto\source\repos\FirstWebApp\ScrapingModel\obj\Debug\netcoreapp3.1\ScrapingModel.csprojAssemblyReference.cache
+C:\Users\kosto\source\repos\FirstWebApp\ScrapingModel\obj\Debug\netcoreapp3.1\ScrapingModel.AssemblyInfoInputs.cache
+C:\Users\kosto\source\repos\FirstWebApp\ScrapingModel\obj\Debug\netcoreapp3.1\ScrapingModel.AssemblyInfo.cs
+C:\Users\kosto\source\repos\FirstWebApp\ScrapingModel\obj\Debug\netcoreapp3.1\ScrapingModel.csproj.CoreCompileInputs.cache
+C:\Users\kosto\source\repos\FirstWebApp\ScrapingModel\obj\Debug\netcoreapp3.1\ScrapingModel.dll
+C:\Users\kosto\source\repos\FirstWebApp\ScrapingModel\obj\Debug\netcoreapp3.1\ScrapingModel.pdb

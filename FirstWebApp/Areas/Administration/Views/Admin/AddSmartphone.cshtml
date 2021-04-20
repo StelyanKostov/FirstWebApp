@@ -1,0 +1,265 @@
+﻿@model FirstWebApp.ViewModels.SmartphoneViewModel
+
+<form method="post" enctype="multipart/form-data"  >
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" class="form-control">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <h1>Network</h1>
+    <div class="form-group">
+        <label asp-for="network.TwoGBands"></label>
+        <input class="form-control" asp-for="network.TwoGBands" />
+    </div>
+    <div class="form-group">
+        <label asp-for="network.TreeGBands"></label>
+        <input class="form-control" asp-for="network.TreeGBands" />
+    </div>
+    <div class="form-group">
+        <label asp-for="network.FourGBands"></label>
+        <input class="form-control" asp-for="network.FourGBands" />
+    </div>
+    <div class="form-group">
+        <label asp-for="network.FiveGBands"></label>
+        <input class="form-control" asp-for="network.FiveGBands" />
+    </div>
+    <div class="form-group">
+        <label asp-for="network.Speed"></label>
+        <input class="form-control" asp-for="network.Speed" />
+    </div>
+    <div class="form-group">
+        <label asp-for="network.Technology"></label>
+        <input class="form-control" asp-for="network.Technology" />
+    </div>
+    <div class="form-group">
+        <label asp-for="network.Other"></label>
+        <input class="form-control" asp-for="network.Other" />
+    </div>
+
+    <h1>Memory</h1>
+    <div class="form-group">
+        <label asp-for="memory.CardSlot"></label>
+        <input class="form-control" asp-for="memory.CardSlot" />
+    </div>
+    <div class="form-group">
+        <label asp-for="memory.Internal"></label>
+        <input class="form-control" asp-for="memory.Internal" />
+    </div>
+    <div class="form-group">
+        <label asp-for="memory.Other"></label>
+        <input class="form-control" asp-for="memory.Other" />
+    </div>
+
+    <h1>Sound</h1>
+    <div class="form-group">
+        <label asp-for="sound.Loudspeaker"></label>
+        <input class="form-control" asp-for="sound.Loudspeaker" />
+    </div>
+    <div class="form-group">
+        <label asp-for="sound.TreeFiveMMJack"></label>
+        <input class="form-control" asp-for="sound.TreeFiveMMJack" />
+    </div>
+    <div class="form-group">
+        <label asp-for="sound.Other"></label>
+        <input class="form-control" asp-for="sound.Other" />
+    </div>
+
+    <h1>View</h1>
+    <div class="form-group">
+        <label asp-for="view.Models"></label>
+        <input class="form-control" asp-for="view.Models" />
+    </div>
+    <div class="form-group">
+        <label asp-for="view.Color"></label>
+        <input class="form-control" asp-for="view.Color" />
+    </div>
+    <div class="form-group">
+        <label asp-for="view.Other"></label>
+        <input class="form-control" asp-for="view.Other" />
+    </div>
+
+    <h1>Main Camera</h1>
+    <div class="form-group">
+        <label asp-for="mainCamera.Features"></label>
+        <input class="form-control" asp-for="mainCamera.Features" />
+    </div>
+    <div class="form-group">
+        <label asp-for="mainCamera.Quad"></label>
+        <input class="form-control" asp-for="mainCamera.Quad" />
+    </div>
+    <div class="form-group">
+        <label asp-for="mainCamera.Video"></label>
+        <input class="form-control" asp-for="mainCamera.Video" />
+    </div>
+    <div class="form-group">
+        <label asp-for="mainCamera.Other"></label>
+        <input class="form-control" asp-for="mainCamera.Other" />
+    </div>
+
+    <h1>Selfie Camera</h1>
+    <div class="form-group">
+        <label asp-for="selfieCamera.Single"></label>
+        <input class="form-control" asp-for="selfieCamera.Single" />
+    </div>
+    <div class="form-group">
+        <label asp-for="selfieCamera.Video"></label>
+        <input class="form-control" asp-for="selfieCamera.Video" />
+    </div>
+    <div class="form-group">
+        <label asp-for="selfieCamera.Features"></label>
+        <input class="form-control" asp-for="selfieCamera.Features" />
+    </div>
+    <div class="form-group">
+        <label asp-for="selfieCamera.Other"></label>
+        <input class="form-control" asp-for="selfieCamera.Other" />
+    </div>
+
+    <h1>Hardware</h1>
+    <div class="form-group">
+        <label asp-for="hardware.Chipset"></label>
+        <input class="form-control" asp-for="hardware.Chipset" />
+    </div>
+    <div class="form-group">
+        <label asp-for="hardware.CPU"></label>
+        <input class="form-control" asp-for="hardware.CPU" />
+    </div>
+    <div class="form-group">
+        <label asp-for="hardware.GPU"></label>
+        <input class="form-control" asp-for="hardware.GPU" />
+    </div>
+    <div class="form-group">
+        <label asp-for="hardware.OS"></label>
+        <input class="form-control" asp-for="hardware.OS" />
+    </div>
+    <div class="form-group">
+        <label asp-for="hardware.Other"></label>
+        <input class="form-control" asp-for="hardware.Other" />
+    </div>
+
+    <h1>Features</h1>
+    <div class="form-group">
+        <label asp-for="features.Sensors"></label>
+        <input class="form-control" asp-for="features.Sensors" />
+    </div>
+    <div class="form-group">
+        <label asp-for="features.Other"></label>
+        <input class="form-control" asp-for="features.Other" />
+    </div>
+
+    <h1>Display</h1>
+    <div class="form-group">
+        <label asp-for="display.Type"></label>
+        <input class="form-control" asp-for="display.Type" />
+    </div>
+    <div class="form-group">
+        <label asp-for="display.Size"></label>
+        <input class="form-control" asp-for="display.Size" />
+    </div>
+    <div class="form-group">
+        <label asp-for="display.Resolution"></label>
+        <input class="form-control" asp-for="display.Resolution" />
+    </div>
+    <div class="form-group">
+        <label asp-for="display.Protection"></label>
+        <input class="form-control" asp-for="display.Protection" />
+    </div>
+    <div class="form-group">
+        <label asp-for="display.Other"></label>
+        <input class="form-control" asp-for="display.Other" />
+    </div>
+
+    <h1>Date</h1>
+    <div class="form-group">
+        <label asp-for="date.Announced"></label>
+        <input class="form-control" asp-for="date.Announced" />
+    </div>
+    <div class="form-group">
+        <label asp-for="date.Status"></label>
+        <input class="form-control" asp-for="date.Status" />
+    </div>
+    <div class="form-group">
+        <label asp-for="date.Other"></label>
+        <input class="form-control" asp-for="date.Other" />
+    </div>
+
+    <h1>Connect</h1>
+    <div class="form-group">
+        <label asp-for="connect.GPS"></label>
+        <input class="form-control" asp-for="connect.GPS" />
+    </div>
+    <div class="form-group">
+        <label asp-for="connect.NFC"></label>
+        <input class="form-control" asp-for="connect.NFC" />
+    </div>
+    <div class="form-group">
+        <label asp-for="connect.Bluetooth"></label>
+        <input class="form-control" asp-for="connect.Bluetooth" />
+    </div>
+    <div class="form-group">
+        <label asp-for="connect.Radio"></label>
+        <input class="form-control" asp-for="connect.Radio" />
+    </div>
+    <div class="form-group">
+        <label asp-for="connect.USB"></label>
+        <input class="form-control" asp-for="connect.USB" />
+    </div>
+    <div class="form-group">
+        <label asp-for="connect.WLAN"></label>
+        <input class="form-control" asp-for="connect.WLAN" />
+    </div>
+
+    <h1>Body</h1>
+    <div class="form-group">
+        <label asp-for="body.Dimensions"></label>
+        <input class="form-control" asp-for="body.Dimensions" />
+    </div>
+    <div class="form-group">
+        <label asp-for="body.SIM"></label>
+        <input class="form-control" asp-for="body.SIM" />
+    </div>
+    <div class="form-group">
+        <label asp-for="body.Weight"></label>
+        <input class="form-control" asp-for="body.Weight" />
+    </div>
+    <div class="form-group">
+        <label asp-for="body.Other"></label>
+        <input class="form-control" asp-for="body.Other" />
+    </div>
+
+    <h1>Battery</h1>
+    <div class="form-group">
+        <label asp-for="battery.Charging">Battery Charging</label>
+        <input type="text" class="form-control" asp-for="battery.Charging" placeholder="Battery Charging">
+        <span asp-validation-for="battery.Charging" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="battery.Type">Battery Type</label>
+        <input type="text" class="form-control" asp-for="battery.Type" placeholder="Battery Type">
+    </div>
+    <div class="form-group">
+        <label asp-for="battery.Other">Battery Other</label>
+        <input type="text" class="form-control" asp-for="battery.Other" placeholder="Battery Other">
+    </div>
+
+    <h1>Image</h1>
+    <div class="form-group">
+        <label asp-for="image.fullInfo"></label>
+        <input class="form-control" asp-for="image.fullInfo" />
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+
+<hr />
+
+
+
+@*<div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>*@

@@ -1,0 +1,12 @@
+C:\Users\kosto\source\repos\FirstWebApp\ScrapingModel\bin\Debug\net5.0\ScrapingModel.deps.json
+C:\Users\kosto\source\repos\FirstWebApp\ScrapingModel\bin\Debug\net5.0\ScrapingModel.dll
+C:\Users\kosto\source\repos\FirstWebApp\ScrapingModel\bin\Debug\net5.0\ref\ScrapingModel.dll
+C:\Users\kosto\source\repos\FirstWebApp\ScrapingModel\bin\Debug\net5.0\ScrapingModel.pdb
+C:\Users\kosto\source\repos\FirstWebApp\ScrapingModel\obj\Debug\net5.0\ScrapingModel.csprojAssemblyReference.cache
+C:\Users\kosto\source\repos\FirstWebApp\ScrapingModel\obj\Debug\net5.0\ScrapingModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kosto\source\repos\FirstWebApp\ScrapingModel\obj\Debug\net5.0\ScrapingModel.AssemblyInfoInputs.cache
+C:\Users\kosto\source\repos\FirstWebApp\ScrapingModel\obj\Debug\net5.0\ScrapingModel.AssemblyInfo.cs
+C:\Users\kosto\source\repos\FirstWebApp\ScrapingModel\obj\Debug\net5.0\ScrapingModel.csproj.CoreCompileInputs.cache
+C:\Users\kosto\source\repos\FirstWebApp\ScrapingModel\obj\Debug\net5.0\ScrapingModel.dll
+C:\Users\kosto\source\repos\FirstWebApp\ScrapingModel\obj\Debug\net5.0\ref\ScrapingModel.dll
+C:\Users\kosto\source\repos\FirstWebApp\ScrapingModel\obj\Debug\net5.0\ScrapingModel.pdb

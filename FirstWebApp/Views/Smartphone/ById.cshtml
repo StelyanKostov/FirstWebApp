@@ -1,0 +1,376 @@
+﻿@model FirstWebApp.ViewModels.SmartphoneViewModel
+@{
+    this.ViewData["Title"] = Model.Name;
+
+    int position = 0;
+}
+
+@if (this.User.IsInRole("Admin"))
+{
+    <a class="btn btn-danger" asp-area="Administration" asp-controller="Admin" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+    <a class="btn btn-danger" asp-area="Administration" asp-controller="Admin" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+    <input  type="text" name="position"  />
+    <a class="btn btn-danger" asp-area="Administration" asp-controller="RankingSmartphone" asp-action="AddToRankingSmartphone" asp-route-id="@Model.Id" asp-route-position="@position">content</a>
+
+}
+
+<a asp-controller="Smartphone" asp-action="AddForComparison" asp-route-id="@Model.Id">Comperison</a>
+<div class="container p-3 mb-5  rounded bg-dark ">
+    <h1 class=" text-warning">@Model.Name</h1>
+    <div class="row">
+        <div class="col-sm-0 ">
+            <div>
+                @if (Model.image != null)
+                {
+                    <img src="@Model.image.Path" class="mr-3 img-responsive " width="220" alt="Image" />
+
+                }
+            </div>
+        </div>
+        <div class="col-sm-0">
+            <div class="card text-white bg-dark mb-3" style=" max-width: 18rem; min-height:18rem">
+                <div class="card-header">Hardware</div>
+                <div class="card-body">
+                    @*<h5 class="card-title"></h5>*@
+                    <p class="card-text">CPU: @Model.hardware.CPU <br />GPU: @Model.hardware.GPU <br />Chipset: @Model.hardware.Chipset</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-0">
+            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;min-height:18rem">
+
+                <div class="card-header">Battery</div>
+                <div class="card-body">
+                    @*<h5 class="card-title">Secondary card title</h5>*@
+                    <p class="card-text">Charging: @Model.battery.Charging <br />Type: @Model.battery.Type</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-0">
+            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;min-height:18rem">
+                <div class="card-header">Date</div>
+                <div class="card-body">
+                    @*<h5 class="card-title">Secondary card title</h5>*@
+                    <p class="card-text">Announced: @Model.date.Announced <br />Status: @Model.date.Status</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table class="table table-dark   table-striped table-sm ">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Date</th>
+                <td>Status</td>
+                <td>@Model.date.Status</td>
+
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Announced</td>
+                <td>@Model.date.Announced</td>
+                <td></td>
+            </tr>
+            @if (@Model.date.Other != null)
+            {
+                <tr>
+                    <th scope="row"></th>
+                    <td>Other</td>
+                    <td>@Model.date.Other</td>
+                    <td></td>
+                </tr>
+            }
+
+            <tr>
+                <th scope="row">Network</th>
+                <td>Technology</td>
+                <td>@Model.network.Technology</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">Display</th>
+                <td>Resolution</td>
+                <td>@Model.display.Resolution</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Size</td>
+                <td>@Model.display.Size</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Type</td>
+                <td>@Model.display.Type</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Protection</td>
+                <td>@Model.display.Protection</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Other</td>
+                <td>@Model.display.Other</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">Hardware</th>
+                <td>OS</td>
+                <td>@Model.hardware.OS</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>CPU</td>
+                <td>@Model.hardware.CPU</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>GPU</td>
+                <td>@Model.hardware.GPU</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Chipset</td>
+                <td>@Model.hardware.Chipset</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Other</td>
+                <td>@Model.hardware.Other</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">Main Camera</th>
+                <td>Quad</td>
+                <td>@Model.mainCamera.Quad</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Video</td>
+                <td>@Model.mainCamera.Video</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Features</td>
+                <td>@Model.mainCamera.Features</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Other</td>
+                <td>@Model.mainCamera.Other</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">Selfie Camera</th>
+                <td>Single</td>
+                <td>@Model.selfieCamera.Single</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Video</td>
+                <td>@Model.selfieCamera.Video</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Features</td>
+                <td>@Model.selfieCamera.Features</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Other</td>
+                <td>@Model.selfieCamera.Other</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">Body</th>
+                <td>Dimensions</td>
+                <td>@Model.body.Dimensions</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Weight</td>
+                <td>@Model.body.Weight</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>SIM</td>
+                <td>@Model.body.SIM</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Other</td>
+                <td>@Model.body.Other</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">Connect</th>
+                <td>WLAN</td>
+                <td>@Model.connect.WLAN</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>USB</td>
+                <td>@Model.connect.USB</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Bluetooth</td>
+                <td>@Model.connect.Bluetooth</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>GPS</td>
+                <td>@Model.connect.GPS</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>NFC</td>
+                <td>@Model.connect.NFC</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Radio</td>
+                <td>@Model.connect.Radio</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Other</td>
+                <td>@Model.connect.Other</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">Battery</th>
+                <td>Type</td>
+                <td>@Model.battery.Type</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Charging</td>
+                <td>@Model.battery.Charging</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Other</td>
+                <td>@Model.battery.Other</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">Sound</th>
+                <td>Loudspeaker</td>
+                <td>@Model.sound.Loudspeaker</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+
+                <td>3.5Mm Jack</td>
+                <td>@Model.sound.TreeFiveMMJack</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Other</td>
+                <td>@Model.sound.Other</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">View</th>
+                <td>Color</td>
+                <td>@Model.view.Color</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Models</td>
+                <td>@Model.view.Models</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Other</td>
+                <td>@Model.view.Other</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">Memory</th>
+                <td>CardSlot</td>
+                <td>@Model.memory.CardSlot</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Internal</td>
+                <td>@Model.memory.Internal</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Other</td>
+                <td>@Model.memory.Other</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">Features</th>
+                <td>Sensors</td>
+                <td>@Model.features.Sensors</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Other</td>
+                <td>@Model.features.Other</td>
+                <td></td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<hr />
+
+<script>
+    document.getElementsByClassName('desi')[0].value = 'dasdas';
+    let event = document.getElementsByClassName('here')[0];
+
+    event.addEventListener('click', asd);
+
+
+    function asd() {
+        @position =parseInt(v); 
+    }
+
+</script>
