@@ -46,7 +46,6 @@ namespace FirstWebApp.Data
 
         public DbSet<Image> Image { get; set; }
 
-        public DbSet<RankingPremiumSmartphones> RankingPremiumSmartphones { get; set; }
     }
 
 }

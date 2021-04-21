@@ -40,8 +40,9 @@ namespace FirstWebApp.Data
         public Sound sound { get; set; }
 
         public Image image { get; set; }
-      
-        public  RankingPremiumSmartphones rankingPremiumSmartphones { get; set; }
+
+        public int? RankingPositionPremiumSmartphone { get; set; }
+
 
 
     }

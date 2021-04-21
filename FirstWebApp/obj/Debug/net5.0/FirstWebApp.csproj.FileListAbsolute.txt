@@ -468,4 +468,5 @@ C:\Users\kosto\source\repos\FirstWebApp\FirstWebApp\obj\Debug\net5.0\Razor\Views
 C:\Users\kosto\source\repos\FirstWebApp\FirstWebApp\obj\Debug\net5.0\Razor\Views\Smartphone\Edit.cshtml.g.cs
 C:\Users\kosto\source\repos\FirstWebApp\FirstWebApp\obj\Debug\net5.0\Razor\Areas\Administration\Views\Admin\Edit.cshtml.g.cs
 C:\Users\kosto\source\repos\FirstWebApp\FirstWebApp\obj\Debug\net5.0\Razor\Areas\Administration\Views\RankingSmartphone\Index.cshtml.g.cs
-C:\Users\kosto\source\repos\FirstWebApp\FirstWebApp\obj\Debug\net5.0\Razor\Areas\Administration\Views\RankingSmartphone\RankingSmartphones.cshtml.g.cs
+C:\Users\kosto\source\repos\FirstWebApp\FirstWebApp\obj\Debug\net5.0\Razor\Areas\Administration\Views\RankingSmartphone\AddToRankingSmartphone.cshtml.g.cs
+C:\Users\kosto\source\repos\FirstWebApp\FirstWebApp\obj\Debug\net5.0\Razor\Views\Ranking\RankingSmartphones.cshtml.g.cs

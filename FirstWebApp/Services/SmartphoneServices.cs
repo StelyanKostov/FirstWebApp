@@ -27,6 +27,7 @@ namespace FirstWebApp.Services
         }
         public IEnumerable<SmartphoneViewModel> GetAll()
         {
+           
             var sp = db.Smartphones
              .Include(x => x.battery)
              .Include(x => x.body)
@@ -42,6 +43,7 @@ namespace FirstWebApp.Services
              .Include(x => x.selfieCamera)
              .Include(x => x.sound)
              .Include(x => x.view).ToList();
+            
 
 
             List<SmartphoneViewModel> smartphone = _mapper.Map<List<SmartphoneViewModel>>(sp);

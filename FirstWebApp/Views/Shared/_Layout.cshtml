@@ -37,6 +37,8 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" asp-area="" asp-controller="Smartphone" asp-action="All">Smartphone</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" asp-area="" asp-controller="Ranking" asp-action="RankingSmartphones">Top 10 Smartphone</a></li>
+
                         @if (SignInManager.IsSignedIn(User))
                         {
                         }

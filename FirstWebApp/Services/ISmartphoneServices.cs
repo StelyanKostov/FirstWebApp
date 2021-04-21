@@ -22,5 +22,7 @@ namespace FirstWebApp.Services
         public void Delete(int id);
 
         public void Edit(SmartphoneViewModel sp);
+
+        public IEnumerable<SmartphoneViewModel> GetAll();
     }
 }

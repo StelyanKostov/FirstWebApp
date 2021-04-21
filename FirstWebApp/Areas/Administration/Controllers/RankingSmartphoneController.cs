@@ -13,25 +13,30 @@ namespace FirstWebApp.Areas.Administration.Controllers
     public class RankingSmartphoneController : Controller
     {
         private readonly IRankingServices rankingServices;
+        private readonly ISmartphoneServices smartphoneServices;
 
-        public RankingSmartphoneController(IRankingServices rankingServices)
+        public RankingSmartphoneController(IRankingServices rankingServices ,ISmartphoneServices smartphoneServices)
         {
             this.rankingServices = rankingServices;
+            this.smartphoneServices = smartphoneServices;
         }
         public IActionResult Index()
         {
 
             return this.View();
         }
+        public IActionResult AddToRankingSmartphone(int id )
+        {
+            var sp = this.smartphoneServices.GetSmartphoneById(id);
+            return this.View(sp);
+        }
+        [HttpPost]
         public IActionResult AddToRankingSmartphone(int id , int position)
         {
-            //this.rankingServices.AddSmartphoneToRanking(id, position);
-            return this.RedirectToAction("RankingSmartphones");
+            this.rankingServices.AddSmartphoneToRanking(id, position);
+            return this.Redirect("/Ranking/RankingSmartphones");
         }
-        public IActionResult RankingSmartphones()
-        {
-            return this.View();
-        }
+      
 
     }
 }

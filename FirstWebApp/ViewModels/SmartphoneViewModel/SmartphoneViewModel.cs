@@ -34,5 +34,6 @@ namespace FirstWebApp.ViewModels
         public Sound sound { get; set; }
 
         public Image image { get; set; }
+        public int? RankingPositionPremiumSmartphone { get; set; }
     }
 }

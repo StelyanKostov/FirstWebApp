@@ -1,0 +1,16 @@
+﻿@model List<FirstWebApp.ViewModels.SmartphoneViewModel>
+<h1>Top 10 Smartphones</h1>
+
+@foreach (var item in @Model)
+{
+    <a asp-controller="Smartphone" asp-action="ById" asp-route-id="@item.Id">
+        <li>@item.RankingPositionPremiumSmartphone</li>
+        @if (item.image != null)
+        {
+            <img src="@item.image.Path" alt="Alternate Text" />
+        }
+        <li>@item.Name</li>
+    </a>
+    <hr />
+}
+<br />

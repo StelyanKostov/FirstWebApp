@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FirstWebApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210420154456_RakingTable")]
-    partial class RakingTable
+    [Migration("20210421084230_RankingPositionPremiumSmartphone")]
+    partial class RankingPositionPremiumSmartphone
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -285,27 +285,6 @@ namespace FirstWebApp.Migrations
                     b.ToTable("Network");
                 });
 
-            modelBuilder.Entity("FirstWebApp.Data.RankingPremiumSmartphones", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Position")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SmartphoneId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SmartphoneId")
-                        .IsUnique();
-
-                    b.ToTable("RankingPremiumSmartphones");
-                });
-
             modelBuilder.Entity("FirstWebApp.Data.SelfieCamera", b =>
                 {
                     b.Property<int>("Id")
@@ -340,6 +319,9 @@ namespace FirstWebApp.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("RankingPositionPremiumSmartphone")
+                        .HasColumnType("int");
 
                     b.Property<int?>("batteryId")
                         .HasColumnType("int");
@@ -658,17 +640,6 @@ namespace FirstWebApp.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("FirstWebApp.Data.RankingPremiumSmartphones", b =>
-                {
-                    b.HasOne("FirstWebApp.Data.Smartphone", "Smartphone")
-                        .WithOne("rankingPremiumSmartphones")
-                        .HasForeignKey("FirstWebApp.Data.RankingPremiumSmartphones", "SmartphoneId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Smartphone");
-                });
-
             modelBuilder.Entity("FirstWebApp.Data.Smartphone", b =>
                 {
                     b.HasOne("FirstWebApp.Data.Battery", "battery")
@@ -805,11 +776,6 @@ namespace FirstWebApp.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("FirstWebApp.Data.Smartphone", b =>
-                {
-                    b.Navigation("rankingPremiumSmartphones");
                 });
 #pragma warning restore 612, 618
         }

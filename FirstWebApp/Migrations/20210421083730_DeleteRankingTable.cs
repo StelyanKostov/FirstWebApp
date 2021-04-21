@@ -2,7 +2,7 @@
 
 namespace FirstWebApp.Migrations
 {
-    public partial class PropForRanking : Migration
+    public partial class DeleteRankingTable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

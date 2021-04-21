@@ -2,15 +2,14 @@
 @{
     this.ViewData["Title"] = Model.Name;
 
-    int position = 0;
+    
 }
 
 @if (this.User.IsInRole("Admin"))
 {
     <a class="btn btn-danger" asp-area="Administration" asp-controller="Admin" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
     <a class="btn btn-danger" asp-area="Administration" asp-controller="Admin" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
-    <input  type="text" name="position"  />
-    <a class="btn btn-danger" asp-area="Administration" asp-controller="RankingSmartphone" asp-action="AddToRankingSmartphone" asp-route-id="@Model.Id" asp-route-position="@position">content</a>
+    <a class="btn btn-danger here" asp-area="Administration" asp-controller="RankingSmartphone" asp-action="AddToRankingSmartphone" asp-route-id="@Model.Id" >Add to Rank</a>
 
 }
 
@@ -361,16 +360,3 @@
 
 
 <hr />
-
-<script>
-    document.getElementsByClassName('desi')[0].value = 'dasdas';
-    let event = document.getElementsByClassName('here')[0];
-
-    event.addEventListener('click', asd);
-
-
-    function asd() {
-        @position =parseInt(v); 
-    }
-
-</script>
