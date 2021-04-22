@@ -46,6 +46,8 @@ namespace FirstWebApp.Data
 
         public DbSet<Image> Image { get; set; }
 
+        public DbSet<ContactMessages> ContactMessages { get; set; }
+
     }
 
 }

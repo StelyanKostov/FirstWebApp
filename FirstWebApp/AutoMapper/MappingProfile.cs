@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FirstWebApp.Data;
 using FirstWebApp.ViewModels;
+using FirstWebApp.ViewModels.InputModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,6 +46,11 @@ namespace FirstWebApp.AutoMapper
             CreateMap<ViewModels.SelfieCamera, Data.SelfieCamera>();
             CreateMap<ViewModels.Sound, Data.Sound>();
             CreateMap<ViewModels.View, Data.View>();
+
+
+            CreateMap<ContactMessages, ContactInputModel>();
+            CreateMap<ContactInputModel, ContactMessages>();
+
         }
     }
 }

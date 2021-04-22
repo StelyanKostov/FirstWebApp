@@ -2,6 +2,7 @@ using AutoMapper;
 using FirstWebApp.AutoMapper;
 using FirstWebApp.Data;
 using FirstWebApp.Services;
+using FirstWebApp.Services.ContactServices;
 using FirstWebApp.Services.Scraping;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -55,6 +56,9 @@ namespace FirstWebApp
             services.AddTransient<IScrapingSmartphoneServices, ScrapingSmartphoneServices>();
             services.AddTransient<ISmartphoneServices, SmartphoneServices>();
             services.AddTransient<IRankingServices, RankingServices>();
+            services.AddTransient<IContactServices, ContactServices>();
+
+            
 
 
             var mapperConfig = new MapperConfiguration(mc =>

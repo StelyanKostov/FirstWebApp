@@ -1,0 +1,44 @@
+﻿@model List<FirstWebApp.ViewModels.InputModel.ContactInputModel>
+
+@foreach (var item in @Model)
+{
+
+    <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="@item.name">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Email</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="@item.email">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">phone</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="@item.phone">
+    </div>
+
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Text</span>
+        </div>
+        <textarea class="form-control" aria-label="With textarea">@item.text</textarea>
+
+    </div>
+    <a class="btn btn-danger" asp-controller="Contact" asp-action="ReadMessages" asp-route-id="@item.Id">Read</a>
+
+    <br />
+    <hr class="bg-dark" />
+
+
+}
+
+
+
+
+
