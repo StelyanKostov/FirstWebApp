@@ -1,0 +1,587 @@
+﻿@model FirstWebApp.ViewModels.ComparisonSmartViewModel.ListComparisonSmartphoneViewModel
+
+<div class="container pb-5 mb-2">
+    <div class="comparison-table">
+        <table class="table table-bordered">
+            <thead class="bg-secondary">
+                <tr>
+                    <td class="align-middle">
+                        <select class="form-control custom-select" id="compare-criteria" data-filter="trigger">
+                            <option value="all">Comparison criteria *</option>
+                            <option value="hardware">Hardware</option>
+                            <option value="display">Display</option>
+                            <option value="battery">Battery</option>
+                            <option value="body">Body</option>
+                            <option value="connect">Connect</option>
+                            <option value="features">Features</option>
+                            <option value="memory">Memory</option>
+                            <option value="maincamera">Main camera</option>
+                            <option value="selfiecamera">Selfie Camera</option>
+                            <option value="sound">Sound</option>
+                            <option value="network">Network</option>
+                            <option value="view">View</option>
+
+                        </select><small class="form-text text-muted">* Choose criteria to filter table below.</small>
+                        @*<div class="pt-3">
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" id="differences">
+                                    <label class="custom-control-label" for="differences">Show differences only</label>
+                                </div>
+                            </div>*@
+                    </td>
+
+
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>
+
+                            <div class="comparison-item">
+                                @*<span class="remove-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span>*@
+                                <a class="comparison-item-thumb" asp-action="ById" asp-route-id="@item.Id"><img src="@item.image.Path" alt="@item.Name"></a><a class="comparison-item-title" href="shop-single.html">@item.Name</a>
+                                @*<button class="btn btn-pill btn-outline-primary btn-sm" type="button" data-toggle="toast" data-target="#cart-toast">Add to Cart</button>*@
+                            </div>
+
+
+
+                        </td>
+                    }
+
+                </tr>
+            </thead>
+            <tbody id="hardware" data-filter="target">
+                <tr class="bg-secondary">
+                    <th class="text-uppercase">Hardware</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td><span class="text-dark font-weight-semibold">@item.Name</span></td>
+                    }
+
+                </tr>
+                <tr>
+                    <th>CPU</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.hardware.CPU</td>
+                    }
+
+                </tr>
+                <tr>
+                    <th>GPU</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.hardware.GPU</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Chipset</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.hardware.Chipset</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>OS</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.hardware.OS</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Other</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.hardware.Other</td>
+
+                    }
+                </tr>
+            </tbody>
+            <tbody id="display" data-filter="target">
+                <tr class="bg-secondary">
+                    <th class="text-uppercase">Display</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td><span class="text-dark font-weight-semibold">@item.Name</span></td>
+                    }
+                </tr>
+                <tr>
+                    <th>Resolution</th>
+
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.display.Resolution</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Size</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.display.Size</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Type</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.display.Type</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Protection</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.display.Protection</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Other</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.display.Other</td>
+
+                    }
+                </tr>
+
+            </tbody>
+            <tbody id="battery" data-filter="target">
+                <tr class="bg-secondary">
+                    <th class="text-uppercase">Battery</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td><span class="text-dark font-weight-semibold">@item.Name</span></td>
+                    }
+                </tr>
+                <tr>
+                    <th>Charging</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.battery.Charging</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Type</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.battery.Type</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Other</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.battery.Other</td>
+
+                    }
+                </tr>
+            </tbody>
+            <tbody id="body" data-filter="target">
+                <tr class="bg-secondary">
+                    <th class="text-uppercase">Body</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td><span class="text-dark font-weight-semibold">@item.Name</span></td>
+                    }
+                </tr>
+                <tr>
+                    <th>Weight</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.body.Weight</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Dimensions</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.body.Dimensions</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>SIM</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.body.SIM</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Other</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.body.Other</td>
+
+                    }
+                </tr>
+            </tbody>
+            <tbody id="connect" data-filter="target">
+                <tr class="bg-secondary">
+                    <th class="text-uppercase">Connect</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td><span class="text-dark font-weight-semibold">@item.Name</span></td>
+                    }
+                </tr>
+                <tr>
+                    <th>GPS</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.connect.GPS</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>NFC</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.connect.NFC</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Bluetooth</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.connect.Bluetooth</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Radio</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.connect.Radio</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>WLAN</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.connect.WLAN</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>USB</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.connect.USB</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Other</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.connect.Other</td>
+
+                    }
+                </tr>
+            </tbody>
+            <tbody id="features" data-filter="target">
+                <tr class="bg-secondary">
+                    <th class="text-uppercase">Features</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td><span class="text-dark font-weight-semibold">@item.Name</span></td>
+                    }
+                </tr>
+                <tr>
+                    <th>Sensors</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.features.Sensors</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Othery</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.features.Other</td>
+
+                    }
+                </tr>
+
+            </tbody>
+            <tbody id="memory" data-filter="target">
+                <tr class="bg-secondary">
+                    <th class="text-uppercase">Memory</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td><span class="text-dark font-weight-semibold">@item.Name</span></td>
+                    }
+                </tr>
+                <tr>
+                    <th>Internal</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.memory.Internal</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>CardSlot</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.memory.CardSlot</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Other</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.memory.Other</td>
+
+                    }
+                </tr>
+            </tbody>
+            <tbody id="maincamera" data-filter="target">
+                <tr class="bg-secondary">
+                    <th class="text-uppercase">Main Camera</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td><span class="text-dark font-weight-semibold">@item.Name</span></td>
+                    }
+                </tr>
+                <tr>
+                    <th>Quad</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.mainCamera.Quad</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Video</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.mainCamera.Video</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Features</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.mainCamera.Features</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Other</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.mainCamera.Other</td>
+
+                    }
+                </tr>
+
+            </tbody>
+            <tbody id="selfiecamera" data-filter="target">
+                <tr class="bg-secondary">
+                    <th class="text-uppercase">Selfie Camera</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td><span class="text-dark font-weight-semibold">@item.Name</span></td>
+                    }
+                </tr>
+                <tr>
+                    <th>Single</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.selfieCamera.Single</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Video</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.selfieCamera.Video</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Features</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.selfieCamera.Features</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Other</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.selfieCamera.Other</td>
+
+                    }
+                </tr>
+
+            </tbody>
+            <tbody id="sound" data-filter="target">
+                <tr class="bg-secondary">
+                    <th class="text-uppercase">Sound</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td><span class="text-dark font-weight-semibold">@item.Name</span></td>
+                    }
+                </tr>
+                <tr>
+                    <th>Loudspeaker</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.sound.Loudspeaker</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Tree Five MM Jack</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.sound.TreeFiveMMJack</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Other</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.sound.Other</td>
+
+                    }
+                </tr>
+
+            </tbody>
+            <tbody id="network" data-filter="target">
+                <tr class="bg-secondary">
+                    <th class="text-uppercase">Network</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td><span class="text-dark font-weight-semibold">@item.Name</span></td>
+                    }
+                </tr>
+                <tr>
+                    <th>Speed</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.network.Speed</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Technology</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.network.Technology</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>TwoGBands</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.network.TwoGBands</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>TreeGBands</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.network.TreeGBands</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>FourGBands</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.network.FourGBands</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>FiveGBands</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.network.FiveGBands</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Other</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.network.Other</td>
+
+                    }
+                </tr>
+
+            </tbody>
+            <tbody id="view" data-filter="target">
+                <tr class="bg-secondary">
+                    <th class="text-uppercase">View</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td><span class="text-dark font-weight-semibold">@item.Name</span></td>
+                    }
+                </tr>
+                <tr>
+                    <th>Color</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.view.Color</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Models</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.view.Models</td>
+
+                    }
+                </tr>
+                <tr>
+                    <th>Other</th>
+                    @foreach (var item in Model.comparisonSmartphoneViewModels)
+                    {
+                        <td>@item.view.Other</td>
+
+                    }
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            $('[data-filter="trigger"]').on("change", function () {
+                var t = $(this).find("option:selected").val().toLowerCase();
+
+                $('[data-filter="target"]').css("display", "none");
+                $("#" + t).css("display", "table-row-group");
+                if (t == "all") {
+                    $('[data-filter="target"]').css("display", "table-row-group")
+                }
+                $(this).css("display", "block");
+            });
+        })
+    </script>
+}
