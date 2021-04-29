@@ -471,5 +471,5 @@ C:\Users\kosto\source\repos\FirstWebApp\FirstWebApp\obj\Debug\net5.0\Razor\Areas
 C:\Users\kosto\source\repos\FirstWebApp\FirstWebApp\obj\Debug\net5.0\Razor\Views\Ranking\RankingSmartphones.cshtml.g.cs
 C:\Users\kosto\source\repos\FirstWebApp\FirstWebApp\obj\Debug\net5.0\Razor\Views\Contact\ContactMessageRezult.cshtml.g.cs
 C:\Users\kosto\source\repos\FirstWebApp\FirstWebApp\obj\Debug\net5.0\Razor\Areas\Administration\Views\Contact\Messages.cshtml.g.cs
-C:\Users\kosto\source\repos\FirstWebApp\FirstWebApp\obj\Debug\net5.0\Razor\Views\Smartphone\Comparison.cshtml.g.cs
-C:\Users\kosto\source\repos\FirstWebApp\FirstWebApp\obj\Debug\net5.0\Razor\Views\Smartphone\Comparison3.cshtml.g.cs
+C:\Users\kosto\source\repos\FirstWebApp\FirstWebApp\obj\Debug\net5.0\Razor\Views\Comparison\Comparison.cshtml.g.cs
+C:\Users\kosto\source\repos\FirstWebApp\FirstWebApp\obj\Debug\net5.0\Razor\Views\Comparison\Comparison3.cshtml.g.cs
