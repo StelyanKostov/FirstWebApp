@@ -76,11 +76,11 @@ namespace FirstWebApp.Controllers
             return this.View();
         }
         [HttpPost]
-        public IActionResult AddSmartphone(SmartphoneViewModel viewmodel)
+        public async Task<IActionResult> AddSmartphone(SmartphoneViewModel viewmodel)
         {
             if (viewmodel.Name != null)
             {
-                smartphoneServices.AddSmartphone(viewmodel);
+                await smartphoneServices.AddSmartphoneAsync(viewmodel);
 
             }
             return this.Redirect("/Smartphone/All");
@@ -97,7 +97,7 @@ namespace FirstWebApp.Controllers
         {
             //10000
             //10400
-            
+
             scrapingSmartphoneServices.AddToDb(start, end);
 
             //scrapingSmartphoneServices.JustAdd();
@@ -111,18 +111,16 @@ namespace FirstWebApp.Controllers
             return this.View(smartphoneServices.GetSmartphoneById(id));
         }
         [HttpPost]
-        public IActionResult Edit(SmartphoneViewModel sp)
+        public async Task<IActionResult> Edit(SmartphoneViewModel sp)
         {
 
-            smartphoneServices.Edit(sp);
+            await smartphoneServices.EditAsync(sp);
             return this.Redirect("/Smartphone/All");
         }
 
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            this.smartphoneServices.Delete(id);
-
-
+            await this.smartphoneServices.DeleteAsync(id);
             return this.Redirect("/Smartphone/All");
         }
 

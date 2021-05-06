@@ -27,7 +27,7 @@ namespace FirstWebApp.Services
         }
         public IEnumerable<SmartphoneViewModel> GetAll()
         {
-           
+
             var sp = db.Smartphones
              .Include(x => x.battery)
              .Include(x => x.body)
@@ -43,7 +43,7 @@ namespace FirstWebApp.Services
              .Include(x => x.selfieCamera)
              .Include(x => x.sound)
              .Include(x => x.view).ToList();
-            
+
 
 
             List<SmartphoneViewModel> smartphone = _mapper.Map<List<SmartphoneViewModel>>(sp);
@@ -194,7 +194,7 @@ namespace FirstWebApp.Services
         {
             return this.db.Smartphones.Count();
         }
-        public void AddSmartphone(SmartphoneViewModel viewModel)
+        public async Task AddSmartphoneAsync(SmartphoneViewModel viewModel)
         {
             Console.WriteLine();
             if (viewModel.image != null)
@@ -206,11 +206,11 @@ namespace FirstWebApp.Services
                 }
                 viewModel.image.Path = @"/image/" + viewModel.image.fullInfo.FileName;
             }
-           
+
 
             var smartphone = _mapper.Map<Smartphone>(viewModel);
-            db.Add(smartphone);
-            db.SaveChanges();
+            await this.db.AddAsync(smartphone);
+            await this.db.SaveChangesAsync();
         }
 
         public Smartphone getSmartphone(int id)
@@ -234,7 +234,7 @@ namespace FirstWebApp.Services
             return sp;
         }
 
-        public void Edit(SmartphoneViewModel sp)
+        public async Task EditAsync(SmartphoneViewModel sp)
         {
             var smartphone = getSmartphone(sp.Id);
 
@@ -248,9 +248,9 @@ namespace FirstWebApp.Services
 
 
 
-            _mapper.Map(sp , smartphone);
+            _mapper.Map(sp, smartphone);
 
-            db.SaveChanges();
+           await db.SaveChangesAsync();
         }
 
         public SmartphoneViewModel GetSmartphoneById(int id)
@@ -260,11 +260,11 @@ namespace FirstWebApp.Services
             return smartphone;
         }
 
-        public void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
             var sp = this.getSmartphone(id);
             db.Remove(sp);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
         }
     }
 }

@@ -7,7 +7,7 @@ namespace FirstWebApp.Services
 {
     public interface IRankingServices
     {
-        public void AddSmartphoneToRanking(int id, int position);
+        public Task AddSmartphoneToRankingAsync(int id, int position);
 
         public List<ViewModels.SmartphoneViewModel> GetSmartphonesRanking();
     }

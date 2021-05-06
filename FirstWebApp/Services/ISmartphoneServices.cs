@@ -15,13 +15,13 @@ namespace FirstWebApp.Services
 
         int GetCount();
 
-        public void AddSmartphone(SmartphoneViewModel viewModel);
+         Task AddSmartphoneAsync(SmartphoneViewModel viewModel);
 
         public IEnumerable<SmartphoneViewModel> SearchByString(int page, string stringSearch ,int itemsPerPage = 12);
 
-        public void Delete(int id);
+        public Task DeleteAsync(int id);
 
-        public void Edit(SmartphoneViewModel sp);
+        public Task EditAsync(SmartphoneViewModel sp);
 
         public IEnumerable<SmartphoneViewModel> GetAll();
     }
