@@ -2,29 +2,31 @@
 
 @if (Model.Have)
 {
-    <div class="container">
-        <div class="row">
+<div class="container">
+    <a asp-controller="Comparison" asp-action="Comparison" class="btn btn-dark">Comparison</a>
 
-            @foreach (var item in Model.comparisonSmartphoneViewModels)
-            {
+    <div class="row">
+
+        @foreach (var item in Model.comparisonSmartphoneViewModels)
+        {
 
 
-                <div class="col-sm">
-                    <div class="card " style="width: 12rem;">
-                        <img class="card-img-top" src="@item.image.Path" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">@item.Name</h5>
-                            <p class="card-text"> Content.</p>
-                            <a asp-controller="Comparison" asp-action="RemoveFromComparison" asp-route-id="@item.Id">X</a>
+            <div class="col-sm">
+                <div class="card " style="width: 12rem;">
+                    <img class="card-img-top" src="@item.image.Path" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Name</h5>
+                        @*<p class="card-text"> Content.</p>*@
+                        <a asp-controller="Comparison" asp-action="RemoveFromComparison" asp-route-id="@item.Id"> <button type="button" class="close" aria-label="Close"><span aria-hidden="true">×</span></button></a>
 
-                        </div>
                     </div>
                 </div>
+            </div>
 
 
-            }
-            <a asp-controller="Comparison" asp-action="Comparison"  class="btn btn-primary">Comparison</a>
-        </div>
+        }
     </div>
+
+</div>
 }
 

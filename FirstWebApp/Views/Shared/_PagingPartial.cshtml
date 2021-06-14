@@ -10,6 +10,7 @@
     {
         action = "All";
     }
+    
 }
 
 <div>
@@ -42,7 +43,9 @@
                 }
 
             }
-            <li class="page-item @if (!Model.HasNextPage) { <text>disabled</text>}">
+            @*<li class="page-item @if (!Model.HasNextPage) { <text>disabled</text>}">*@
+            <li class="page-item">
+
                 <a class="page-link" asp-action="@action" asp-route-id="@Model.NextPageNumber" asp-route-stringSearch="@Model.StringSearch">Next</a>
             </li>
         </ul>

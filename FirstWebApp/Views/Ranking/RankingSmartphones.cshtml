@@ -4,12 +4,11 @@
 @foreach (var item in @Model)
 {
     <a asp-controller="Smartphone" asp-action="ById" asp-route-id="@item.Id">
-        <li>@item.RankingPositionPremiumSmartphone</li>
+        <h3>@item.RankingPositionPremiumSmartphone @item.Name</h3>
         @if (item.image != null)
         {
             <img src="@item.image.Path" alt="Alternate Text" />
         }
-        <li>@item.Name</li>
     </a>
     <hr />
 }

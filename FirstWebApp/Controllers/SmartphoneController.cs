@@ -14,6 +14,7 @@ namespace FirstWebApp.Controllers
 
     public class SmartphoneController : Controller
     {
+        const int ItemsPerPage = 24;
         private readonly ISmartphoneServices smartphoneServices;
 
 
@@ -53,7 +54,7 @@ namespace FirstWebApp.Controllers
             {
                 return this.NotFound();
             }
-            const int ItemsPerPage = 12;
+            
             var viewModel = new ListSmartphoneViewModel()
             {
                 ItemsPerPage = ItemsPerPage,
@@ -101,7 +102,6 @@ namespace FirstWebApp.Controllers
             {
                 return this.NotFound();
             }
-            const int ItemsPerPage = 12;
             var viewModel = new ListSmartphoneViewModel()
             {
                 ItemsPerPage = ItemsPerPage,
@@ -112,6 +112,8 @@ namespace FirstWebApp.Controllers
                 StringSearch = stringSearch,
 
             };
+
+            viewModel.CountSmartphones = viewModel.listSmartphoneViewModels.Count();
 
             return this.View(viewModel);
         }

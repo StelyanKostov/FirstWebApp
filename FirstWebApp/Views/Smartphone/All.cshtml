@@ -9,12 +9,13 @@
 <partial name="_SearchPatial" />
 <partial name="_CardComparisonPatial" model="Model.ComparisonSmartphones" />
 
+<a asp-controller="Smartphone" asp-action="Search" asp-route-stringSearch="Samsung">Samsung</a>
 
 <div class="row">
     @foreach (var rezult in this.Model.listSmartphoneViewModels)
     {
 
-        <div class="media col-md-3 ">
+        <div class="media col-md-3 " style="border: 3px inset #3d3d1b;">
             <a asp-action="ById" asp-route-id="@rezult.Id">
                 <h5>@rezult.Name</h5>
                 @if (rezult.image != null)
@@ -22,13 +23,14 @@
                     <img src="@rezult.image.Path" class="mr-3 img-responsive" width="100" alt="..." />
 
                 }
-                <a asp-controller="Comparison" asp-action="AddForComparison" asp-route-id="@rezult.Id">Comp...</a>
 
                 <div class="media-body">
 
-                    @*<h5 class="mt-0"> Info</h5>*@
+                    <p>@rezult.hardware.CPU</p>
+
                 </div>
             </a>
+            @*<a asp-controller="Comparison" asp-action="AddForComparison" asp-route-id="@rezult.Id" class="btn btn-primary">Comparison</a>*@
         </div>
 
     }
